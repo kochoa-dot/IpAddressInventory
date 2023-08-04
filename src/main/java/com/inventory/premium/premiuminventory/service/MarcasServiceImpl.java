@@ -36,6 +36,7 @@ public class MarcasServiceImpl implements MarcasService {
     public Marcas updateMarca(Marcas newMarca, Integer marcaId) {
         return marcasRepository.findById(marcaId).map(marcas -> {
             marcas.setMarca(newMarca.getMarca());
+            marcas.setEstado(newMarca.getEstado());
             return marcasRepository.save(marcas);
         }).orElseThrow(()->new MarcaNotFoundException(marcaId));
     }

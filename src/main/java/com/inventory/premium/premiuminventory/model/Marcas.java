@@ -20,7 +20,12 @@ public class Marcas implements Serializable {
     @Column(name = "Marca")
     private String marca;
 
-    public Marcas(String marca){
+    @ManyToOne
+    @JoinColumn(name = "EstadoID")
+    private Estados estado;
+
+    public Marcas(String marca, Estados estado){
         this.marca = marca;
+        this.estado = estado;
     }
 }
