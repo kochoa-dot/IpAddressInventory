@@ -26,9 +26,14 @@ public class Tiendas {
     @JoinColumn(name = "CENTROCOSTOID")
     private CentrosCostos centrosCostos;
 
-    public Tiendas(String tienda, Marcas marcas, CentrosCostos centrosCostos) {
+    @ManyToOne
+    @JoinColumn(name = "EstadoID")
+    private Estados estado;
+
+    public Tiendas(String tienda, Marcas marcas, CentrosCostos centrosCostos, Estados estado) {
         this.tienda = tienda;
         this.marcas = marcas;
         this.centrosCostos = centrosCostos;
+        this.estado = estado;
     }
 }
