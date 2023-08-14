@@ -15,6 +15,7 @@ public class TiposEnlancesIp {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TIPOENLACEIPID")
     private int tipoEnlaceId;
+
     @Column(name = "TIPOENLACE")
     private String tipoEnlace;
 

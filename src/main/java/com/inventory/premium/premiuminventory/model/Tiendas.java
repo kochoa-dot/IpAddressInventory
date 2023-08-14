@@ -15,6 +15,7 @@ public class Tiendas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TIENDAID")
     private int tiendaId;
+
     @Column(name = "Tienda")
     private String tienda;
 
