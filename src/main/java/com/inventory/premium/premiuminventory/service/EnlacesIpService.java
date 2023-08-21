@@ -17,4 +17,5 @@ public interface EnlacesIpService {
     String deleteEnlace(Integer enlaceIpId);
 
     EnlacesIp findByEnlace(String direccionIp);
+
 }
