@@ -29,4 +29,19 @@ public class EnlacesIpController {
     public EnlacesIp getEnlaceById(@PathVariable Integer enlaceIpId){
         return enlacesIpService.getEnlaceById(enlaceIpId);
     }
+
+    @PutMapping("/updateEnlace/{enlaceIpId}")
+    public EnlacesIp updateEnlace(@RequestBody EnlacesIp newEnlace, @PathVariable Integer enlaceIpId){
+        return enlacesIpService.updateEnlace(newEnlace, enlaceIpId);
+    }
+
+    @DeleteMapping("/deleteEnlace/{enlaceIpId}")
+    public String deleteEnlace(@PathVariable Integer enlaceIpId){
+        return enlacesIpService.deleteEnlace(enlaceIpId);
+    }
+
+    @GetMapping("/getByEnlace/{direccionIp}")
+    public EnlacesIp getByEnlace(@PathVariable String direccionIp){
+        return enlacesIpService.findByEnlace(direccionIp);
+    }
 }

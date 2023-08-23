@@ -52,7 +52,7 @@ public class EnlacesIpServiceImpl implements EnlacesIpService {
 
     @Override
     public EnlacesIp findByEnlace(String direccionIp) {
-        EnlacesIp enlacesIp = enlacesIpRepository.findByEnlace(direccionIp);
+        EnlacesIp enlacesIp = enlacesIpRepository.findByDireccionIp(direccionIp);
         if (enlacesIp == null){
             throw new DireccionIpNotFoundException(direccionIp);
         }

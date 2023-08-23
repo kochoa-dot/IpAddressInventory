@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EnlacesIpRepository extends JpaRepository<EnlacesIp, Integer> {
 
-    EnlacesIp findByEnlace(String direccionIp);
+    EnlacesIp findByDireccionIp(String direccionIp);
 }
