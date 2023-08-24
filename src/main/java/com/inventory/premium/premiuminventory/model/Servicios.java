@@ -17,7 +17,7 @@ public class Servicios {
     private int servicioId;
 
     @Column(name = "NOMBRESERVICIO")
-    private String nombreServicio;
+    private String servicio;
 
     @ManyToOne
     @JoinColumn(name = "ENLACEIPID")
@@ -28,7 +28,7 @@ public class Servicios {
     private Proveedores proveedores;
 
     public Servicios(String nombreServicio, EnlacesIp enlacesIp, Proveedores proveedores) {
-        this.nombreServicio = nombreServicio;
+        this.servicio = nombreServicio;
         this.enlacesIp = enlacesIp;
         this.proveedores = proveedores;
     }

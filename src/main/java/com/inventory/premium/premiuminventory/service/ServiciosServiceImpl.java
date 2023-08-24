@@ -34,7 +34,7 @@ public class ServiciosServiceImpl implements ServiciosService {
     @Override
     public Servicios updateServicio(Servicios newServicio, Integer servicioId) {
         return serviciosRepository.findById(servicioId).map(servicios -> {
-            servicios.setNombreServicio(newServicio.getNombreServicio());
+            servicios.setServicio(newServicio.getServicio());
             servicios.setProveedores(newServicio.getProveedores());
             servicios.setEnlacesIp(newServicio.getEnlacesIp());
             return serviciosRepository.save(servicios);
@@ -51,10 +51,10 @@ public class ServiciosServiceImpl implements ServiciosService {
     }
 
     @Override
-    public Servicios findByServicio(String nombreServicio) {
-        Servicios servicios = serviciosRepository.findByServicio(nombreServicio);
+    public Servicios findByServicio(String servicio) {
+        Servicios servicios = serviciosRepository.findByServicio(servicio);
         if (servicios == null){
-            throw new ServicioNameNotFoundException(nombreServicio);
+            throw new ServicioNameNotFoundException(servicio);
         }
         return servicios;
     }

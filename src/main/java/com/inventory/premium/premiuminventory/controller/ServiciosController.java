@@ -40,8 +40,8 @@ public class ServiciosController {
         return serviciosService.deleteServicio(servicioId);
     }
 
-    @GetMapping("/getByServicio/{nombreServicio}")
-    public Servicios getByServicio(@PathVariable String nombreServicio){
-        return serviciosService.findByServicio(nombreServicio);
+    @GetMapping("/getByServicio/{servicio}")
+    public Servicios getByServicio(@PathVariable String servicio){
+        return serviciosService.findByServicio(servicio);
     }
 }

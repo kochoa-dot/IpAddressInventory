@@ -16,5 +16,5 @@ public interface ServiciosService {
 
     String deleteServicio(Integer servicioId);
 
-    Servicios findByServicio(String nombreServicio);
+    Servicios findByServicio(String servicio);
 }
