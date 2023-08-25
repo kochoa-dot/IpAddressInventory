@@ -35,8 +35,8 @@ public class RolServiceImpl implements RolService {
     }
 
     @Override
-    public Roles findByRol(String rolName) {
-        Roles roles = rolesRepository.findByRol(rolName);
+    public Roles findByRolName(String rolName) {
+        Roles roles = rolesRepository.findByRolName(rolName);
         if (roles == null){
             throw new RolNameNotFoundException(rolName);
         }

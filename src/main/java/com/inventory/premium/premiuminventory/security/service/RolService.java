@@ -12,5 +12,5 @@ public interface RolService {
 
     Roles updateRol(Roles newRol, Integer rolId);
 
-    Roles findByRol(String rolName);
+    Roles findByRolName(String rolName);
 }

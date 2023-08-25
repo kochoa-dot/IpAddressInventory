@@ -16,7 +16,7 @@ public class Roles implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ROLESID")
+    @Column(name = "ROLID")
     private int rolId;
     @Column(name = "NOMBREROL")
     private String rolName;
