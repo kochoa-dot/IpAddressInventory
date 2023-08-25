@@ -32,6 +32,10 @@ public class Usuarios implements Serializable {
     @Column(name = "Contrasena")
     private String contrasena;
 
+    @NotNull
+    @Column(name = "Nombre")
+    private String nombre;
+
     @ManyToOne
     @JoinColumn(name = "ROLID")
     private Roles roles;
