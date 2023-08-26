@@ -6,7 +6,7 @@ import com.inventory.premium.premiuminventory.security.model.Usuarios;
 import java.util.List;
 import java.util.Optional;
 
-public interface UserService {
+public interface UsuariosService {
 
     public Optional<Usuarios> getByNombreUsuario(String usuario);
 
