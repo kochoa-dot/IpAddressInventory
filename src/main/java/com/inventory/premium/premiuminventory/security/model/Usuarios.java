@@ -2,9 +2,7 @@ package com.inventory.premium.premiuminventory.security.model;
 
 import com.inventory.premium.premiuminventory.model.Estados;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.io.Serializable;
@@ -12,6 +10,8 @@ import java.io.Serializable;
 @Entity
 @Table(schema = "dbo", name = "Usuarios")
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Usuarios implements Serializable {
