@@ -1,6 +1,7 @@
 package com.inventory.premium.premiuminventory.security.jwt;
 
 
+import com.inventory.premium.premiuminventory.security.dto.JwtDto;
 import com.inventory.premium.premiuminventory.security.model.UsuarioPrincipal;
 import com.nimbusds.jwt.JWT;
 import com.nimbusds.jwt.JWTClaimsSet;
@@ -87,4 +88,24 @@ public class JwtProvider {
      * @return un nuevo token en caso de que el token que se le pase como argumento haya expirado
      * @throws ParseException
      */
+
+    public String refreshToken(JwtDto jwtDto) throws ParseException {
+        try {
+            Jwts.parser().setSigningKey(secret.getBytes()).parseClaimsJws(jwtDto.getToken());
+        } catch (ExpiredJwtException e) {
+            JWT jwt = JWTParser.parse(jwtDto.getToken());
+            JWTClaimsSet claims = jwt.getJWTClaimsSet();
+            String nombreUsuario = claims.getSubject();
+            List<String> roles = (List<String>) claims.getClaim("roles");
+
+            return Jwts.builder()
+                    .setSubject(nombreUsuario)
+                    .claim("roles", roles)
+                    .setIssuedAt(new Date())
+                    .setExpiration(new Date(new Date().getTime() + expiration))
+                    .signWith(SignatureAlgorithm.HS512, secret.getBytes())
+                    .compact();
+        }
+        return null;
+    }
 }
